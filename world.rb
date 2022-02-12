@@ -2,11 +2,6 @@ require_relative 'continent'
 require_relative 'country'
 
 class World
-  def load_data_from_file
-    @continent = Continent.new
-    @country = Country.new
-  end
-
   def countries_continents
     load_data_from_file
     @continent.countries
@@ -20,6 +15,13 @@ class World
   def countries_inflation
     load_data_from_file
     @country.five_countries_highest_inflation
+  end
+
+  private
+
+  def load_data_from_file
+    @continent = Continent.new
+    @country = Country.new
   end
 end
 

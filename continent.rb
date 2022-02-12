@@ -7,14 +7,14 @@ class Continent
   def countries
     hash = {}
 
-    continents.each do |continent| 
-      hash["#{continent}"] = []
+    continents.each do |continent|
+      hash[continent.to_s] = []
 
       document.elements.each('*/country') do |country|
         # если континент страны соответствует переданому континенту,
         # то добавляем имя страны в хэш для ключа этого континента
         if country.attributes['continent'] == continent
-          hash["#{continent}"] << country.attributes['name']
+          hash[continent.to_s] << country.attributes['name']
         end
       end
     end

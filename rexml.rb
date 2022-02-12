@@ -2,7 +2,7 @@ require "rexml/document"
 
 module MyRexml
   # путь к файлу
-  FILE_PATH = '/cia-1996.xml'
+  FILE_PATH = '/cia-1996.xml'.freeze
 
   def receipt_document
     current_path = File.dirname(__FILE__)
@@ -18,6 +18,6 @@ module MyRexml
 
   # чтобы при повторном обращении не вычислять документ по новой (ускорение вычисления)
   def document
-    @document ||= receipt_document 
+    @document ||= receipt_document
   end
 end
